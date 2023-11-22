@@ -1,0 +1,12 @@
+
+{% block body %}
+{{movie.id}}<br>
+{{movie.name}}<br>
+{{movie.desc}}<br>
+{{movie.year}}<br>
+<img src="{{movie.img.url}}" width="100" height="100">
+<a class=btn btn-warning" href="{%url 'movieapp:update' movie.id %}">update</a>
+<a class=btn btn-danger" href="{%url 'movieapp:delete' movie.id %}">delete</a>
+
+
+{% endblock %}
