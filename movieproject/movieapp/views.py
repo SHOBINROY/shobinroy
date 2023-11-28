@@ -21,6 +21,7 @@ def add_movie(request):
         img = request.POST.get("img")
         movie=Movie(name=name,desc=desc,year=year,img=img)
         movie.save();
+        return redirect('/')
     return render(request,'add.html')
 def update(request,id):
     movie = Movie.objects.get(id=id)
@@ -35,4 +36,4 @@ def delete(request,id):
         movie = Movie.objects.get ( id )
         movie.delete()
         return redirect ( '/' )
-    return redirect ( request,'delete.html' )
+    return render ( request,'delete.html' )
