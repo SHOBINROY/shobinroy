@@ -18,7 +18,7 @@ def add_movie(request):
         name=request.POST.get("name")
         desc = request.POST.get("desc")
         year = request.POST.get("year")
-        img = request.POST.get("img")
+        img = request.FILES("img")
         movie=Movie(name=name,desc=desc,year=year,img=img)
         movie.save();
     return render(request,'add.html')
